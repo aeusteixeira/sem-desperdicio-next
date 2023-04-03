@@ -9,7 +9,7 @@ Tecnologias utilizadas
 - Node.js
 - Next.js
 - API do ChatGPT
-- 
+  
 ## Como usar
 Clone o repositório:
 ````
