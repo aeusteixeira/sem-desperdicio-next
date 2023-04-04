@@ -1,0 +1,26 @@
+.title{
+    text-align: center;
+    color: #6C5B5B;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .description{
+    text-align: center;
+    color: #6C5B5B;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .paragraph{
+    color: #6C5B5B;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .paragraph .hashtag{
+    color: #6C5B5B;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }

@@ -1,0 +1,28 @@
+.main {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .logo{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .title{
+    text-align: center;
+    color: #6C5B5B;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .description{
+    text-align: center;
+    color: #6C5B5B;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
