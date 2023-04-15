@@ -48,3 +48,24 @@
     background-color: #e7a406;
     color: #FFFFFF;
   }
+
+/*
+  O loading deve mostrar diversos emojis de comida aleatoriamente
+*/
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.loadingBar{
+  width: 100%;
+  height: 10px;
+  background-color: #E5D6C5;
+  border-radius: 5px;
+  margin-top: 20px;
+  content: '🥝🥑🥔🥕🥒🥜'
+}

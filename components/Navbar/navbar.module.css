@@ -35,14 +35,11 @@
   text-decoration: none;
 }
 
-.navbarLink:active {
-  border-bottom: 2px solid #19AB14;
-}
-
 .navbarLink:hover {
     border-bottom: 2px solid #19AB14;
 }
 
 .navbarLinkActive {
     border-bottom: 2px solid #19AB14;
+    color: #19AB14;
 }

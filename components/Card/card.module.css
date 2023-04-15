@@ -8,34 +8,46 @@
     margin-top: 20px;
   }
   
-  .cardResult .cardResultHeader{
-    display: flex;
+  .cardResultHeader{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .cardResult .cardResultHeader .cardResultTitle{
-    color: #6C5B5B;
+  /* Card Result Title deve ficar em cima da Card Result Description */
+  .cardResultTitle{
+    color: #584a4a;
     font-size: 20px;
+    justify-content: center;
   }
   
-  .cardResult .cardResultHeader .cardResultDescription{
-    color: #6C5B5B;
+  .cardResultDescription{
+    color: #584a4a;
     font-size: 14px;
   }
   
   .cardResultBody{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
+    color: #584a4a;
+    /* Container dos dados do card */
+    padding: 10px;
   }
   
-  .cardResultBody .cardResultContent{
+  .cardResultContent{
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+
+  .cardResultContent ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cardResultContent li{
+    margin-bottom: 5px;
   }
   
   .cardResultFooter{
@@ -43,18 +55,39 @@
     justify-content: flex-end;
   }
   
-  .cardResultFooter .cardResultButton{
+  .cardResultButton{
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #FFB400;
     color: #FFFFFF;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
   
-  .cardResultFooter .cardResultButton:hover{
+  .cardResultButton:hover{
     background-color: #e7a406;
     color: #FFFFFF;
   }
+  
+  .cardResultButton svg{
+    font-size: 1.2rem;
+  }
+
+  .clickedButton {
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
   

@@ -1,23 +1,63 @@
 import styles from './card.module.css';
+import { useState } from 'react';
 
-export default function Card(){
-    return (
-        <>
-        <div className={styles.cardResult}>
-              <div className={styles.cardResultHeader}>
-                <h3 className={styles.cardResultTitle}>Batata Frita</h3>
-                <p className={styles.cardResultDescription}>Batata frita com molho de alho</p>
-                </div>
-                <div className={styles.cardResultBody}>
-                  <p className={styles.cardResultContent}>Ingredientes: 1 batata, 1 colher de sopa de azeite, 1 colher de sopa de alho, 1 colher de sopa de sal, 1 colher de sopa de pimenta do reino, 1 colher de sopa de orégano, 1 colher de sopa de cebola, 1 colher de sopa de pimentão
-                  </p>
-                </div>
-                <div className={styles.cardResultFooter}>
-                  <button className={styles.cardResultButton}>
-                  👍🏻 fiz essa receita
-                  </button>
-                  </div>
-              </div>
-        </>
-    );
+export default function Card({recipe}) {
+
+  const [saved, setSaved] = useState(false);
+
+  function handleSave() {
+    setSaved(!saved);
+  }
+
+  // Função para separar o título, descrição e modo de preparo
+  const splitRecipe = (recipe) => {
+    const title = recipe.title || '';
+    const description = recipe.description || '';
+    const content = recipe.content || [
+      'Não foi possível encontrar a receita',
+    ];
+    return {title, description, content};
+  }
+
+  const {title, description, content} = splitRecipe(recipe);
+  return (
+    <>
+      <div className={styles.cardResult}>
+        <div className={styles.cardResultHeader}>
+          <h3 className={styles.cardResultTitle}>
+            {title}
+          </h3>
+          <p className={styles.cardResultDescription}>
+            {description}
+          </p>
+        </div>
+        <div className={styles.cardResultBody}>
+          <ul className={styles.cardResultContent}>
+          {
+            content == null ? (
+              <li>Não foi possível encontrar a receita</li>
+            ) : (
+              content.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))
+            )
+          }
+          </ul>
+        </div>
+        <div className={styles.cardResultFooter}>
+        <button
+        className={
+          `${styles.cardResultButton} ${saved ? styles.clickedButton : ''}`
+        } 
+        onClick={handleSave}>
+          {saved ? (
+            <span>Remover dos favoritos ❤️</span>
+          ) : (
+            <span>Adicionar aos favoritos ⭐️</span>
+          )}
+      </button>
+        </div>
+      </div>
+    </>
+  );
 }
