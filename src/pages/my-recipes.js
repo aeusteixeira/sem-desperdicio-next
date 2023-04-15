@@ -20,6 +20,9 @@ export default function About() {
         <h1 className={styles.title}>
             Minhas Receitas
         </h1>
+        <p className={styles.description}>
+            Aqui estão as receitas que você salvou.
+        </p>
         {
     typeof window !== 'undefined' && localStorage.getItem('savedRecipes') ? (
         JSON.parse(localStorage.getItem('savedRecipes')).map((recipe, index) => (
