@@ -6,8 +6,19 @@ export default function Card({recipe}) {
   const [saved, setSaved] = useState(false);
 
   function handleSave() {
-    setSaved(!saved);
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    const recipeExists = savedRecipes.some((savedRecipe) => savedRecipe.title === recipe.title);
+  
+    if (recipeExists) {
+      const newSavedRecipes = savedRecipes.filter((savedRecipe) => savedRecipe.title !== recipe.title);
+      localStorage.setItem('savedRecipes', JSON.stringify(newSavedRecipes));
+    } else {
+      localStorage.setItem('savedRecipes', JSON.stringify([...savedRecipes, recipe]));
+    }
+  
+    setSaved(!recipeExists);
   }
+  
 
   // Função para separar o título, descrição e modo de preparo
   const splitRecipe = (recipe) => {
@@ -51,9 +62,9 @@ export default function Card({recipe}) {
         } 
         onClick={handleSave}>
           {saved ? (
-            <span>Remover dos favoritos ❤️</span>
+            <span>Remover dos favoritos 💔</span>
           ) : (
-            <span>Adicionar aos favoritos ⭐️</span>
+            <span>Adicionar aos favoritos ❤️</span>
           )}
       </button>
         </div>

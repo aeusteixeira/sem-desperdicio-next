@@ -1,17 +1,15 @@
 .navbar {
   background-color: #D5C3A5;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3rem 1rem 0.3rem 1rem;
+  padding: 0.3rem 1rem;
   margin-bottom: 12px;
   border-radius: 5px;
 }
 
 .navbarContainer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -19,9 +17,6 @@
 
 .navbarList {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   list-style: none;
   padding: 0;
 }
@@ -33,13 +28,18 @@
 .navbarLink {
   color: #19AB14;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
 }
 
-.navbarLink:hover {
-    border-bottom: 2px solid #19AB14;
-}
-
+.navbarLink:hover,
 .navbarLinkActive {
-    border-bottom: 2px solid #19AB14;
-    color: #19AB14;
+  border-bottom-color: #19AB14;
+  color: #19AB14;
+}
+
+.navbarLinkBadge {
+  background-color: #19AB14;
+  color: #fff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 5px;
 }
